@@ -104,7 +104,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 /* ---------- shared media layer ---------- */
 .hero__media,.calc__media,.cta__media{position:absolute;inset:0;overflow:hidden}
-.hero__media video,.calc__media video,.cta__media video{width:100%;height:100%;object-fit:cover}
+.hero__media img,.calc__media img,.cta__media img{width:100%;height:100%;object-fit:cover}
 
 /* ---------- hero ---------- */
 .hero{position:relative;min-height:min(104vh,940px);display:flex;flex-direction:column;justify-content:center;padding:132px 0 30px;isolation:isolate}
@@ -179,7 +179,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .stats dd{margin:4px 0 0;font-size:12.5px;color:var(--dim-l);white-space:nowrap}
 
 .about__fig{position:relative;margin:0;border-radius:var(--r);overflow:hidden;aspect-ratio:16/11;box-shadow:0 30px 70px -34px rgba(0,0,0,.55)}
-.about__fig video{width:100%;height:100%;object-fit:cover}
+.about__fig img{width:100%;height:100%;object-fit:cover}
 .about__fig::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 46%,rgba(4,6,10,.86) 100%)}
 .about__fig figcaption{
   position:absolute;left:clamp(18px,2.4vw,30px);bottom:clamp(16px,2.2vw,28px);z-index:1;
@@ -201,8 +201,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 }
 .card:hover{transform:translateY(-7px);border-color:rgba(245,198,78,.42);box-shadow:0 26px 50px -28px rgba(0,0,0,.85)}
 .card__media{position:relative;aspect-ratio:4/3;overflow:hidden}
-.card__media video{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
-.card:hover .card__media video{transform:scale(1.06)}
+.card__media img{width:100%;height:100%;object-fit:cover}
 .card__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(10,11,13,.82) 100%)}
 .card__ic{
   position:absolute;left:12px;bottom:-17px;z-index:2;width:34px;height:34px;border-radius:50%;
@@ -288,7 +287,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 /* ---------- testimonial ---------- */
 .testi{display:grid;grid-template-columns:.86fr 1.14fr;gap:clamp(14px,2vw,26px);background:var(--ink);padding:0 0 clamp(20px,3vw,34px)}
 .testi__media{position:relative;aspect-ratio:16/9.1;overflow:hidden}
-.testi__media video{width:100%;height:100%;object-fit:cover}
+.testi__media img{width:100%;height:100%;object-fit:cover}
 .testi__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(6,8,11,.8) 100%)}
 .watch--onmedia{position:absolute;left:clamp(16px,2vw,26px);bottom:clamp(14px,2vw,24px);z-index:2}
 .watch--onmedia .watch__btn{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.5);backdrop-filter:blur(6px)}
@@ -424,8 +423,20 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .hero__btns .btn{flex:1 1 100%;justify-content:center}
 }
 
+/* ---------- Ken Burns (GPU CSS motion, replaces encoded video) ---------- */
+.kb{width:100%;height:100%;object-fit:cover;transform-origin:center center;
+    will-change:transform;backface-visibility:hidden;transform:translateZ(0);
+    animation:kb-in 34s linear infinite alternate}
+@keyframes kb-in{from{transform:scale(1.045)}to{transform:scale(1.12)}}
+@keyframes kb-out{from{transform:scale(1.12)}to{transform:scale(1.045)}}
+.kb--zoomout{animation-name:kb-out;animation-duration:40s}
+.kb--tl{transform-origin:24% 30%;animation-duration:36s}
+.kb--tr{transform-origin:76% 28%;animation-duration:32s}
+.kb--br{transform-origin:72% 74%;animation-duration:38s}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
   .reveal{opacity:1;transform:none}
+  .kb{animation:none!important;transform:scale(1.05)}
   html{scroll-behavior:auto}
 }

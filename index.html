@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=2">
+<link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
 
@@ -65,9 +65,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero__media">
-      <video class="lazyvid" muted loop playsinline preload="none"
-             poster="assets/img/hero.jpg" data-src="assets/video/hero.mp4"
-             data-src-sm="assets/video/hero-mobile.mp4" data-poster-sm="assets/img/hero-mobile.jpg"></video>
+      <img class="kb kb--zoomout" src="assets/img/hero.jpg" srcset="assets/img/hero-mobile.jpg 900w, assets/img/hero.jpg 1600w" sizes="100vw" alt="" fetchpriority="high">
     </div>
     <div class="hero__scrim"></div>
 
@@ -136,8 +134,7 @@
       </div>
 
       <figure class="about__fig reveal" id="story">
-        <video class="lazyvid" muted loop playsinline preload="none"
-               poster="assets/img/about-villa.jpg" data-src="assets/video/about-villa.mp4"></video>
+        <img class="kb kb--tl" src="assets/img/about-villa.jpg" alt="" loading="lazy">
         <figcaption>Cleaner Homes<br>Happier Families</figcaption>
       </figure>
     </div>
@@ -158,35 +155,35 @@
       <div class="cards">
         <article class="card reveal">
           <div class="card__media">
-            <video class="lazyvid" muted loop playsinline preload="none" poster="assets/img/sol-residential.jpg" data-src="assets/video/sol-residential.mp4"></video>
+            <img class="kb" src="assets/img/sol-residential.jpg" alt="" loading="lazy">
             <span class="card__ic"><svg class="ic"><use href="#i-leaf"/></svg></span>
           </div>
           <div class="card__body"><h3>Residential Solar</h3><p>For Homes &amp; Villas</p><a class="card__go" href="#calculator" aria-label="Residential Solar"><svg class="ic"><use href="#i-arrow"/></svg></a></div>
         </article>
         <article class="card reveal">
           <div class="card__media">
-            <video class="lazyvid" muted loop playsinline preload="none" poster="assets/img/sol-commercial.jpg" data-src="assets/video/sol-commercial.mp4"></video>
+            <img class="kb kb--tr" src="assets/img/sol-commercial.jpg" alt="" loading="lazy">
             <span class="card__ic"><svg class="ic"><use href="#i-shield"/></svg></span>
           </div>
           <div class="card__body"><h3>Commercial Solar</h3><p>For Offices &amp; Businesses</p><a class="card__go" href="#calculator" aria-label="Commercial Solar"><svg class="ic"><use href="#i-arrow"/></svg></a></div>
         </article>
         <article class="card reveal">
           <div class="card__media">
-            <video class="lazyvid" muted loop playsinline preload="none" poster="assets/img/sol-industrial.jpg" data-src="assets/video/sol-industrial.mp4"></video>
+            <img class="kb kb--br" src="assets/img/sol-industrial.jpg" alt="" loading="lazy">
             <span class="card__ic"><svg class="ic"><use href="#i-wrench"/></svg></span>
           </div>
           <div class="card__body"><h3>Industrial Solar</h3><p>For Large Industries</p><a class="card__go" href="#calculator" aria-label="Industrial Solar"><svg class="ic"><use href="#i-arrow"/></svg></a></div>
         </article>
         <article class="card reveal">
           <div class="card__media">
-            <video class="lazyvid" muted loop playsinline preload="none" poster="assets/img/sol-agricultural.jpg" data-src="assets/video/sol-agricultural.mp4"></video>
+            <img class="kb kb--tl" src="assets/img/sol-agricultural.jpg" alt="" loading="lazy">
             <span class="card__ic"><svg class="ic"><use href="#i-leaf"/></svg></span>
           </div>
           <div class="card__body"><h3>Agricultural Solar</h3><p>For Farms &amp; Irrigation</p><a class="card__go" href="#calculator" aria-label="Agricultural Solar"><svg class="ic"><use href="#i-arrow"/></svg></a></div>
         </article>
         <article class="card reveal">
           <div class="card__media">
-            <video class="lazyvid" muted loop playsinline preload="none" poster="assets/img/sol-hybrid.jpg" data-src="assets/video/sol-hybrid.mp4"></video>
+            <img class="kb kb--tr" src="assets/img/sol-hybrid.jpg" alt="" loading="lazy">
             <span class="card__ic"><svg class="ic"><use href="#i-support"/></svg></span>
           </div>
           <div class="card__body"><h3>Hybrid Solar + Battery</h3><p>For Backup &amp; Savings</p><a class="card__go" href="#calculator" aria-label="Hybrid Solar plus Battery"><svg class="ic"><use href="#i-arrow"/></svg></a></div>
@@ -198,7 +195,7 @@
   <!-- CALCULATOR -->
   <section class="calc" id="calculator">
     <div class="calc__media">
-      <video class="lazyvid" muted loop playsinline preload="none" poster="assets/img/calculator.jpg" data-src="assets/video/calculator.mp4"></video>
+      <img class="kb kb--zoomout" src="assets/img/calculator.jpg" alt="" loading="lazy">
     </div>
     <div class="calc__scrim"></div>
 
@@ -258,7 +255,7 @@
   <!-- TESTIMONIAL -->
   <section class="testi">
     <div class="testi__media reveal">
-      <video class="lazyvid" muted loop playsinline preload="none" poster="assets/img/engineer.jpg" data-src="assets/video/engineer.mp4"></video>
+      <img class="kb kb--tl" src="assets/img/engineer.jpg" alt="" loading="lazy">
       <a class="watch watch--onmedia" href="#story">
         <span class="watch__btn"><svg class="ic"><use href="#i-play"/></svg></span>
         <span class="watch__txt"><strong>Watch How We Work</strong><em>2 min</em></span>
@@ -284,7 +281,7 @@
   <!-- CTA BAND -->
   <section class="cta" id="contact">
     <div class="cta__media">
-      <video class="lazyvid" muted loop playsinline preload="none" poster="assets/img/cta.jpg" data-src="assets/video/cta.mp4"></video>
+      <img class="kb kb--zoomout" src="assets/img/cta.jpg" alt="" loading="lazy">
     </div>
     <div class="cta__scrim"></div>
     <div class="wrap cta__in">
@@ -348,6 +345,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=2"></script>
+<script src="js/main.js?v=3"></script>
 </body>
 </html>

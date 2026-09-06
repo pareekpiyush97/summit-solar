@@ -25,33 +25,18 @@
     }
   });
 
-  /* ---- videos: attach source and play only while in view -- */
-  var vids = $$('.lazyvid');
-  var onPhone = window.matchMedia('(max-width:680px)').matches;
-  var attach = function (v) {
-    if (v.src) { return; }
-    if (onPhone && v.dataset.srcSm) {
-      v.src = v.dataset.srcSm;
-      if (v.dataset.posterSm) { v.poster = v.dataset.posterSm; }
-    } else if (v.dataset.src) {
-      v.src = v.dataset.src;
-    }
-  };
-  if ('IntersectionObserver' in window) {
-    var vio = new IntersectionObserver(function (entries) {
+  /* ---- media motion is pure CSS (GPU Ken Burns on .kb images) ----
+     Pause the animation while a card is off-screen so it isn't burning
+     compositor cycles on things nobody can see. */
+  var kbs = $$('.kb');
+  if (!reduced && 'IntersectionObserver' in window) {
+    kbs.forEach(function (el) { el.style.animationPlayState = 'paused'; });
+    var kio = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
-        var v = en.target;
-        if (en.isIntersecting) {
-          attach(v);
-          if (!reduced) { var p = v.play(); if (p && p.catch) { p.catch(function () {}); } }
-        } else if (!v.paused) {
-          v.pause();
-        }
+        en.target.style.animationPlayState = en.isIntersecting ? 'running' : 'paused';
       });
-    }, { rootMargin: '200px 0px', threshold: 0.01 });
-    vids.forEach(function (v) { vio.observe(v); });
-  } else {
-    vids.forEach(function (v) { attach(v); v.play(); });
+    }, { rootMargin: '150px 0px', threshold: 0.01 });
+    kbs.forEach(function (el) { kio.observe(el); });
   }
 
   /* ---- reveal on scroll --------------------------------- */
