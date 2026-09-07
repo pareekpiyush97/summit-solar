@@ -427,8 +427,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .kb{width:100%;height:100%;object-fit:cover;transform-origin:center center;
     will-change:transform;backface-visibility:hidden;transform:translateZ(0);
     animation:kb-in 34s linear infinite alternate}
-@keyframes kb-in{from{transform:scale(1.045)}to{transform:scale(1.12)}}
-@keyframes kb-out{from{transform:scale(1.12)}to{transform:scale(1.045)}}
+@keyframes kb-in{from{transform:scale(1.0)}to{transform:scale(1.06)}}
+@keyframes kb-out{from{transform:scale(1.06)}to{transform:scale(1.0)}}
 .kb--zoomout{animation-name:kb-out;animation-duration:40s}
 .kb--tl{transform-origin:24% 30%;animation-duration:36s}
 .kb--tr{transform-origin:76% 28%;animation-duration:32s}
@@ -437,6 +437,6 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
   .reveal{opacity:1;transform:none}
-  .kb{animation:none!important;transform:scale(1.05)}
+  .kb{animation:none!important;transform:scale(1.02)}
   html{scroll-behavior:auto}
 }
